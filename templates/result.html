@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+
+</style>
+<head>
+  <title>Result</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/Users/shubham/Desktop/IDS_Github/Intrusion-Detection-using-ML/templates/favicon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top" style="background-color: #e3f2fd;">
+    <!-- Brand/logo -->
+    <ul class="navbar-nav mr-auto">
+     <li><a class="navbar-brand" href="/"><img src="../static/images/logo.png" alt="Logo" style="height:40px;"></a></li>
+    </ul>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Auto-fill form
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Denial of Service (DoS)</a>
+          <a class="dropdown-item" href="#">Probe</a>
+          <a class="dropdown-item" href="#">User to Root(U2R)</a>
+          <a class="dropdown-item" href="#">Remote to Local (R2L)</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" onclick="alert('chup be!');">Normal traffic</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Model Comparison</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Feature Descriptions</a>
+      </li>
+
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" id="Search">
+      <button class="btn btn-outline-success" onclick="find_text()">Search</button>
+    </form>
+    </ul>
+  </nav>
+
+  <br><br><br><br>
+  <h3 style="text-align:center;">Confidence Percentages</h3>
+  <br>
+
+  <div class="container">
+    <div class="card">
+        <div class="card-body">
+          <h4>Random Forest Model's Prediction</h4>
+          <p>Attack</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="card">
+        <div class="card-body">
+          <h4>Autoencoder Model's Prediction</h4>
+          <p>Normal</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">98%</div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>

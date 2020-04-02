@@ -49,6 +49,9 @@ def main(class_name):
     print(ind)
     predictions = random_forest_model.predict(test)
     probabilities = random_forest_model.predict_proba(test)
-    print(predictions, probabilities)
-    return(predictions, probabilities)
+    probabilities = probabilities[0]
+    for i in range(5):
+        probabilities[i] = "{:.2f}".format(probabilities[i]*100)
+    print(predictions[0], list(probabilities))
+    return(predictions[0], list(probabilities))
 

@@ -10,37 +10,33 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/submit", methods=['POST'])
-def submit():
-    type = request.form.get("traffic_type")
-    type = type.lower()
-    if type not in ["normal","dos","u2r","r2l","probe"]:
-        return render_template("index.html")
-    pred, prob = main(type)
-    return render_template("result.html", predictions=pred, probabilities=prob)
-
-#-------------------------------------------------------------------------------------------
 @app.route("/features")
 def features():
     return render_template("features.html")
 
 @app.route("/analysis")
 def analysis():
-    return render_template("charts.html")
+    return render_template("analysis.html")
 
 @app.route("/model")
 def model():
     return render_template("model.html")
-
-# Web Upload Functions
 #-------------------------------------------------------------------------------------------
-@app.route("/upload_and_crop", methods=["POST"])
-def upload_and_crop():
-    if request.method == "POST":
-        uid = request.form.get("uid")
-        billid = request.form.get("billid")
-        result = main(arr)
-        return result
+
+@app.route("/submit", methods=['POST'])
+def submit():
+    if request.method=="POST":
+        type = request.form.get("traffic_type")
+        type = type.lower()
+        print(type)
+        attacks = ["normal","dos","r2l","u2r","probe"]
+        if type not in attacks:
+            return render_template("index.html")
+        pred, prob = main(type)
+
+        dict = {"predictions":attacks[pred], "normal":prob[0], "dos":prob[1], "u2r":prob[3], "r2l":prob[2], "probe":prob[4]}
+        return render_template("result.html",dict=dict)
+
 
 # Commands to run
 #-------------------------------------------------------------------------------------------

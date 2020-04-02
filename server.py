@@ -10,9 +10,23 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/submit", methods=['POST'])
+def submit():
+    type = request.form.get("traffic_type")
+    type = type.lower()
+    if type not in ["normal","dos","u2r","r2l","probe"]:
+        return render_template("index.html")
+    pred, prob = main(type)
+    return render_template("result.html", predictions=pred, probabilities=prob)
+
+#-------------------------------------------------------------------------------------------
 @app.route("/features")
 def features():
     return render_template("features.html")
+
+@app.route("/analysis")
+def analysis():
+    return render_template("charts.html")
 
 @app.route("/model")
 def model():

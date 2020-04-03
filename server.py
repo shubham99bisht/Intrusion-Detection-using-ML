@@ -27,6 +27,7 @@ def model():
 def submit():
     if request.method=="POST":
         type = request.form.get("traffic_type")
+        expected = type
         type = type.lower()
         print(type)
         attacks = ["normal","dos","r2l","u2r","probe"]
@@ -34,7 +35,7 @@ def submit():
             return render_template("index.html")
         pred, prob = main(type)
 
-        dict = {"predictions":attacks[pred], "normal":prob[0], "dos":prob[1], "u2r":prob[3], "r2l":prob[2], "probe":prob[4]}
+        dict = {"expected":expected,"predictions":attacks[pred], "normal":prob[0], "dos":prob[1], "u2r":prob[3], "r2l":prob[2], "probe":prob[4]}
         return render_template("result.html",dict=dict)
 
 

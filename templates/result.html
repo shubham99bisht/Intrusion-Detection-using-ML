@@ -55,7 +55,8 @@
   </nav>
 
   <br><br><br><br>
-  <h3 style="text-align:center;">Confidence Percentages</h3>
+  <h2 style="text-align:center;">Results</h2>
+  <h5 style="text-align:center;">Expected outcome: <span id="exp"></span></h5>
   <br>
 
   <div class="container">
@@ -93,8 +94,8 @@
 </html>
 
 <script>
-// console.log({{dict}});
 var js = JSON.parse('{{ dict | tojson | safe}}');
+document.getElementById("exp").innerHTML=js["expected"];
 var attacks = ["normal","dos","r2l","u2r","probe"];
 for(var i = 0; i < 5; i++) {
   document.getElementById("rnd_frst_"+attacks[i]).innerHTML=js[attacks[i]]+"%";
@@ -103,10 +104,13 @@ for(var i = 0; i < 5; i++) {
 
 var res = js["predictions"];
 
-document.getElementById("rnd_frst_"+res).classList.remove('bg-warning');
-document.getElementById("rnd_frst_"+res).classList.add('bg-success');
-
-if(res=="normal"){document.getElementById("result").innerHTML="Normal Traffic";}
-else{document.getElementById("result").innerHTML="Attack detected";}
+if(res=="normal"){
+  document.getElementById("rnd_frst_"+res).classList.remove('bg-warning');
+  document.getElementById("rnd_frst_"+res).classList.add('bg-success');
+  document.getElementById("result").innerHTML="Normal Traffic";}
+else{
+  document.getElementById("rnd_frst_"+res).classList.remove('bg-warning');
+  document.getElementById("rnd_frst_"+res).classList.add('bg-danger');
+  document.getElementById("result").innerHTML="Attack detected";}
 </script>
 

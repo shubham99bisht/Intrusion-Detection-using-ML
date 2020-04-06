@@ -1,6 +1,6 @@
 # Intrusion-Detection-using-ML
-Project Idea: Making an Intrusion Detection using different classifiers<br/>
-Team:<br/>
+Project Idea: Making an Intrusion Detection using different classifiers<br/><br/>
+Contributors:<br/>
 [Shubham Bisht](https://github.com/shubham99bisht)<br/>
 [Mukund Choudhary](https://github.com/mukund126)
 
@@ -21,7 +21,8 @@ $ python -m flask run
 ```
 
 ## Training on Google Colab notebook
-https://colab.research.google.com/drive/1O0rBG9NioSwe00qnReJky_nSLeRDb9W0
+<a href="https://colab.research.google.com/drive/1O0rBG9NioSwe00qnReJky_nSLeRDb9W0" target="_blank">Link for Colab Notebook</a>
+
 ## Results
 
-![](Web_Interface/Media/IDS_demo.gif)
+![](./Media/IDS_demo.gif)

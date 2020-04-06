@@ -21,7 +21,7 @@ $ python -m flask run
 ```
 
 ## Training on Google Colab notebook
-<a href="https://colab.research.google.com/drive/1O0rBG9NioSwe00qnReJky_nSLeRDb9W0" target="_blank">Link for Colab Notebook</a>
+<a href="https://colab.research.google.com/drive/1O0rBG9NioSwe00qnReJky_nSLeRDb9W0">Link for Colab Notebook</a>
 
 ## Results
 
